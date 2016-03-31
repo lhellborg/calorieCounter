@@ -10,9 +10,9 @@ var FoodCollection = Backbone.Collection.extend({
 		model: Food,
 	});
 
-var foodCollection = new FoodCollection();
 
-foodCollection.add(butter);
 
-alert(foodCollection.get(butter).get('foodItem'))
+
+
+
 

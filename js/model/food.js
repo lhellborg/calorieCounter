@@ -17,6 +17,5 @@ var butter = new Food({
 	calories: 45
 })
 
-alert(ham.get('foodItem'));
 
 

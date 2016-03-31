@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Firebase and backbone</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.2/backbone-min.js"></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <!-- BackboneFire -->
+  <script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="calorieIntake">
+    <form class="ui-filterable">
+      <input id="foodList" data-type="search" placeholder="What have you eaten today?" />
+    </form>
+    <div id="foodFilter" data-filter="true" data-input="#foodList">
+      <p>butter</p>
+      <p>ham</p>
+    </ul>
+  </div>
+  <section>
+    <h2>Your calorie intake</h2>
+    <p>today:</p>
+    <p>a week:</p>
+    <h2>Todays food</h2>
+    <ul id="foodList"></ul>
+  </section>
+
+ <script src="js/model/food.js"></script>
+  <script src="js/collections/foodCollections.js"></script>
+  <script src="js/views/food.js"></script>
+  <script src="js/views/app.js"></script>
+
+</body>
+</html>

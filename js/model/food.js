@@ -7,15 +7,7 @@ var Food = Backbone.Model.extend({
 	}
 });
 
-var ham = new Food({
-	foodItem: 'Ham',
-	calories: 20
-});
 
-var butter = new Food({
-	foodItem: 'Butter',
-	calories: 45
-})
 
 
 

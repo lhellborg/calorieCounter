@@ -12,6 +12,12 @@
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
   <!-- BackboneFire -->
   <script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+  <script>
+      $(function() {
+        $( "#foodFilter" ).selectable();
+      });
+  </script>
 
 </head>
 
@@ -20,17 +26,11 @@
     <input id="food" placeholder="food" type="text">
     <input id="calories" placeholder="calories" type="text">
     <button id="addItem">add</button>
+    <div id="showSearch"></div>
   </div>
 
 
-  <div id="calorieIntake" data-role="main" class="ui-content">
-    <form class="ui-filterable">
-      <input id="add-food" data-type="search" placeholder="search..." />
-    </form>
-    <ul id="foodFilter" data-role="listview" data-filter="true" data-input="#add-food" data-autodividers="true" data-inset="true">
 
-    </ul>
-  </div>
 
   <section id="main">
   </section>

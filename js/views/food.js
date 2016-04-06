@@ -5,10 +5,11 @@ var FoodView = Backbone.View.extend({
 	events: {
       'click button#addItem': 'addItem',
       'keyup input#food': 'search',
+      'click button#clearAll': 'clear'
     },
 
 	initialize: function() {
-		_.bindAll(this, 'render', 'addItem', 'search');
+		_.bindAll(this, 'render', 'addItem', 'search', 'clear');
 
 		this.foodCollection = this.collection;
 
@@ -66,6 +67,12 @@ var FoodView = Backbone.View.extend({
 			calories: calories
 		});
 		this.foodCollection.add(item); // add item to collection; view is updated via event 'add'
+
+    },
+
+    clear: function() {
+    	$('#food').val("");
+    	$('#calories').val("");
 
     }
 });

@@ -25,12 +25,21 @@ var FoodView = Backbone.View.extend({
 	},
 
 	search: function() {
+		var foodChoice = $('input[name="choice"]:checked').val();//the input string
 		var searchstring = $('#food').val(); //the input string
 
 		var posting = $.post('https://api.nutritionix.com/v1_1/search' , {
 			 "appId":"38be9a6b",
 			 "appKey":"7f1e5364fc8d5c22bfa241fd43987a29",
-			 "query": searchstring
+			 "query": searchstring,
+			 "fields":["item_name","brand_name","nf_calories","nf_serving_size_qty","nf_serving_size_unit"],
+			  "sort":{
+			    "field":"_score",
+			    "order":"desc"
+			  },
+			  "filters":{
+			    "item_type":foodChoice
+			  }
 		});
 		this.searchableCollection = new SearchableCollection();
 
@@ -40,7 +49,7 @@ var FoodView = Backbone.View.extend({
 		 	data.hits.forEach(function(item) {
 		 		that.searchableCollection.add({
 		 			foodItem: item.fields.item_name,
-		 			calories: 40
+		 			calories: item.fields.nf_calories
 		 		});
 		 	});
 		 	that.render();

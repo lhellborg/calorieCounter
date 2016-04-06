@@ -18,19 +18,34 @@
         $( "#foodFilter" ).selectable();
       });
   </script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
 <body>
+  <header>
+    <h1>Calorie counter</h1>
+  </header>
+  <nav>
+    <h3>Select from where you want to do your search</h3>
+  </nav>
+  <form action="">
+    <input type="radio" name="choice" value="1"> Restaurant<br>
+    <input type="radio" name="choice" value="2" checked="checked"> Grocery foods<br>
+    <input type="radio" name="choice" value="3"> USDA<br>
+  </form>
+
+  <nav id="middle">
+    <h3>Write a food item</h3>
+    <p>You can choose from the list that appears below or you can add your own calories and press <strong>add</strong></p>
+  </nav>
+
   <div id="userInput">
     <input id="food" placeholder="food" type="text">
     <input id="calories" placeholder="calories" type="text">
     <button id="addItem">add</button>
     <div id="showSearch"></div>
   </div>
-
-
-
 
   <section id="main">
   </section>

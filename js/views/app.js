@@ -12,8 +12,7 @@ var AppView = Backbone.View.extend({
 		this.foodCollection = this.collection;
 		this.foodCollection.bind("add" , this.render);
 		this.render();
-		this.removeAll();
-	},
+		},
 
 	render: function() {
 		$('#summary').empty(); //empty the view before appending another thing
@@ -36,10 +35,16 @@ var AppView = Backbone.View.extend({
 
 	},
 
-	removeAll: function(event) {
-		// event.preventDefafult();
-		// this.foodCollection.remove();
-		console.log('something')
+	removeAll: function() {
+		var onComplete = function(error) {
+		  if (error) {
+		    console.log('Synchronization failed');
+		  } else {
+		    console.log('Synchronization succeeded');
+		    this.render
+		  }
+		};
+		this.foodCollection.remove(onComplete);
 	}
 
 });

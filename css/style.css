@@ -22,7 +22,8 @@ section {
 }
 
 #remove {
-    margin-top: 33px
+    margin-top: 33px;
+    margin-left: -16px;
 }
 
 #middle {

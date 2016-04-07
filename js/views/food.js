@@ -66,7 +66,6 @@ var FoodView = Backbone.View.extend({
 			foodItem: food,
 			calories: calories
 		}); // add item to collection; view is updated via event 'create'
-
     },
 
     clear: function() {

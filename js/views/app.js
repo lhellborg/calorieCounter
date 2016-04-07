@@ -24,8 +24,8 @@ var AppView = Backbone.View.extend({
 		}
 
 		this.$('#summary').append('<h2>Your calorie intake</h2>')
-		this.$('#summary').append('<p>today: ' + totCalories + '</p>')
-		this.$('#summary').append('<h2>Todays food</h2>')
+		this.$('#summary').append('<p>total: ' + totCalories + '</p>')
+		this.$('#summary').append('<h2>Food items</h2>')
 		var ul = $('<ul id="foodList"></ul>');
 		this.foodCollection.forEach(function(item) {
 			ul.append('<li>' + item.get('foodItem') + '</li>');
@@ -41,7 +41,7 @@ var AppView = Backbone.View.extend({
 		    console.log('Synchronization failed');
 		  } else {
 		    console.log('Synchronization succeeded');
-		    this.render
+		    this.render();
 		  }
 		};
 		this.foodCollection.remove(onComplete);

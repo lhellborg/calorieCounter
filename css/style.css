@@ -21,6 +21,10 @@ section {
     padding:10px;
 }
 
+#remove {
+    margin-top: 33px
+}
+
 #middle {
     margin-top: 10px;
     margin-bottom: 10px;

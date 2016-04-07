@@ -62,19 +62,20 @@ var FoodView = Backbone.View.extend({
     addItem: function(event){
 		var food = $('#food').val();
 		var calories = $('#calories').val();
-		var item = new Food({
+		this.foodCollection.create({
 			foodItem: food,
 			calories: calories
-		});
-		this.foodCollection.add(item); // add item to collection; view is updated via event 'add'
+		}); // add item to collection; view is updated via event 'create'
 
     },
 
     clear: function() {
     	$('#food').val("");
     	$('#calories').val("");
+    	$('#showSearch').empty();
 
     }
+
 });
 
 var FoodEntryView = Backbone.View.extend({
@@ -90,11 +91,10 @@ var FoodEntryView = Backbone.View.extend({
 		return this.$el.append(this.model.get("foodItem"));
 	},
 	selectItem: function() {
-		var item = new Food({
+		this.collection.create({
 			foodItem: this.model.get('foodItem'),
 			calories: this.model.get('calories')
 		});
-		this.collection.add(item);
 	}
 
 });

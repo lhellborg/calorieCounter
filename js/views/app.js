@@ -2,16 +2,21 @@
 var AppView = Backbone.View.extend({
 	el: $('#main'),
 
+	events: {
+		'click #remove': 'removeAll'
+	},
+
 
 	initialize: function() {
-		_.bindAll(this, "render");
+		_.bindAll(this, 'render', 'removeAll');
 		this.foodCollection = this.collection;
 		this.foodCollection.bind("add" , this.render);
 		this.render();
+		this.removeAll();
 	},
 
 	render: function() {
-		$('#main').empty(); //empty the view before appending another thing
+		$('#summary').empty(); //empty the view before appending another thing
 
 		var totCalories = 0;
 		for (i=0; i<this.foodCollection.length; i++) {
@@ -19,16 +24,22 @@ var AppView = Backbone.View.extend({
 
 		}
 
-		$(this.el).append('<h2>Your calorie intake</h2>')
-		$(this.el).append('<p>today: ' + totCalories + '</p>')
-		$(this.el).append('<h2>Todays food</h2>')
+		this.$('#summary').append('<h2>Your calorie intake</h2>')
+		this.$('#summary').append('<p>today: ' + totCalories + '</p>')
+		this.$('#summary').append('<h2>Todays food</h2>')
 		var ul = $('<ul id="foodList"></ul>');
 		this.foodCollection.forEach(function(item) {
 			ul.append('<li>' + item.get('foodItem') + '</li>');
 		})
 
-		$(this.el).append(ul);
+		this.$('#summary').append(ul);
 
+	},
+
+	removeAll: function(event) {
+		// event.preventDefafult();
+		// this.foodCollection.remove();
+		console.log('something')
 	}
 
 });

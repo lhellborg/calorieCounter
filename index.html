@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Firebase and backbone</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
@@ -35,27 +36,30 @@
     <input type="radio" name="choice" value="3"> USDA<br>
   </form>
 
-  <nav id="middle">
+  <nav id="middle" class= "middle">
     <h3>Write a food item</h3>
-    <p>You can choose from the list that appears below or you can add your own calories and press <strong>add</strong></p>
+    <p>You can choose from the list that appears below when you start writing <strong>or</strong> you can add your own calories and press <strong>add</strong></p>
   </nav>
 
   <div id="userInput">
-    <input id="food" placeholder="food" type="text">
+    <input id="food" placeholder="food" type="text" autofocus>
     <input id="calories" placeholder="calories" type="text">
     <button id="addItem">add</button>
     <button id="clearAll">clear</button>
-    <div id="showSearch"></div>
   </div>
 
   <main id="main">
+    <aside>
+      <button id="remove" class="remove">Remove all</button>
+    </aside>
     <section id="summary">
     </section>
-    <aside>
-      <button id="remove">Remove all</button>
-    </aside>
+
   </main>
 
+  <div>
+    <div id="showSearch"></div>
+  </div>
 
 
 

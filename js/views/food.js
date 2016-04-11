@@ -22,7 +22,7 @@ var FoodView = Backbone.View.extend({
 			var that = this;
 			this.searchableCollection.forEach(function(item) {
 				ul.append(new FoodEntryView({model: item, collection: that.foodCollection}).render());
-			})
+			});
 	},
 
 	search: function() {
@@ -44,16 +44,20 @@ var FoodView = Backbone.View.extend({
 		});
 		this.searchableCollection = new SearchableCollection();
 
-		var that = this;
+		posting.fail(function() {
+		    alert( "Sorry, could not get food item" );
+		  });
+
+		var self = this;
 		posting.done(function(data) {
 
 		 	data.hits.forEach(function(item) {
-		 		that.searchableCollection.add({
+		 		self.searchableCollection.add({
 		 			foodItem: item.fields.item_name,
 		 			calories: item.fields.nf_calories
 		 		});
 		 	});
-		 	that.render();
+		 	self.render();
 		});
 	},
 
@@ -69,7 +73,7 @@ var FoodView = Backbone.View.extend({
     },
 
     clear: function() {
-    	$('#food').val("");
+    	$('#food').val("").focus();
     	$('#calories').val("");
     	$('#showSearch').empty();
 
@@ -84,7 +88,7 @@ var FoodEntryView = Backbone.View.extend({
 		'click': 'selectItem'
 	},
 	initialize: function() {
-		_.bindAll(this, 'render', 'selectItem')
+		_.bindAll(this, 'render', 'selectItem');
 	},
 	render: function() {
 		return this.$el.append(this.model.get("foodItem"));
@@ -94,6 +98,7 @@ var FoodEntryView = Backbone.View.extend({
 			foodItem: this.model.get('foodItem'),
 			calories: this.model.get('calories')
 		});
+		$('#foodFilter').empty();
 	}
 
 });

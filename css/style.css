@@ -5,17 +5,60 @@
         margin: 0 auto;
     }
 
-    .remove {
-        margin-top: 33px;
-    }
-
     #foodFilter {
         float: right;
+        max-width: 40vw;
+        margin-right: 10px;
     }
 
     #summary {
         float: left;
     }
+
+    .foodItems {
+    display: flex;
+    }
+
+    #showSearch {
+        max-width: 300px;
+        float: right;
+        margin-top: 130px;
+    }
+}
+
+@media (max-width: 699px) {
+    h3 {
+        margin: 0px;
+        font-size: 0.8em;
+    }
+    p {
+        margin: 0px;
+        font-size: 0.7em;
+        line-height: 15px;
+    }
+    h2 {
+        margin: 0px;
+    }
+    h4 {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    h1{
+        margin: 5px;
+    }
+    .foodItems {
+        width: 90vw;
+    }
+    #summary {
+        max-width: 95%;
+    }
+}
+
+
+
+.left {
+    float: left;
+    margin-bottom: 0px;
 }
 
 header {
@@ -30,7 +73,7 @@ nav {
     padding: 5px;
 }
 section {
-    width: 350px;
+    width: 370px;
     padding: 10px;
 }
 
@@ -39,10 +82,15 @@ section {
     margin-bottom: 10px;
 }
 
-.remove {
-    margin-top: 10px;
+.remove,
+.removeLast {
+    margin-left: 20px;
 }
 
 h2 {
     margin-top: 0px;
+}
+
+h5 {
+    margin: 0px;
 }

@@ -1,4 +1,4 @@
-
+// FoodCollection using firebase to asve the data
 
 	var FoodCollection = Backbone.Firebase.Collection.extend({
 		model: Food,

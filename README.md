@@ -6,9 +6,7 @@ You can choose from three different filters "Restaurant", "Grocery foods" or "US
 
 
 ## How to select a food item
-Start to write the name of the food in the input field for `food`
-
-A list will appear with the header **Choose one** on top. Click on the item you would like to add to your list.
+Start to write the name of the food in the input field for `food`. A list will appear with the header **Choose one** on top. Click on the item you would like to add to your list.
 
 ## Add your own food item with your own specified calories
 Write the name of the food you would like to add. Put in the calories in the `calories` input field. Press `add` and the item will appear in your list.
